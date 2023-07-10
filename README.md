@@ -15,7 +15,8 @@
 - 배포 환경
   - Spring boot Project / MariaDB [cloudtype([https://cloudtype.io](https://cloudtype.io/))]
   - Linux (Ubuntu 22.04.2 LTS)
-- 북키타카 임시 홈페이지 ([https://www.bookitaka.store](https://www.bookitaka.store))
+  - Managed DNS : Cloudflare
+- 북키타카 임시 홈페이지 ([https://bookitaka.store](https://bookitaka.store))
 
 <br><br>
 
@@ -107,7 +108,7 @@
 
 <br><br>
 
-## 구현 기능
+##  주요 기능
 
 ### 💡 인증 및 인가
 스프링 시큐리티와 jjwt 라이브러리를 이용한 JWT(Json Web Token) 방식의 인증으로 구현하였습니다. 액세스 토큰은 HTTP-Only 쿠키에 저장하여 XSS 공격에 의한 토큰 탈취 위험성을 낮췄으며, 리프레시 토큰을 추가해 액세스 토큰이 탈취되더라도 만료 시간을 짧게 설정 가능하게 하여 보안성을 높였습니다.
@@ -115,7 +116,7 @@
 JWT 구현 방식은 오픈소스([https://github.com/murraco/spring-boot-jwt](https://github.com/murraco/spring-boot-jwt))를 참고하여 제작되었습니다.
 
 ### 💡 회원
-리소스 접근 기능은 API로 개발되었습니다. 회원 ROLE은 관리자와 일반 회원으로 나뉘며 각각의 역할에 따라 리소스 요청에 대한 권한을 인가 받을 수 있습니다. 비밀번호 찾기 기능은 임시 비밀번호를 발급하여 네이버 메일 API를 통해 가입한 이메일로 발급받게 됩니다.
+회원 가입, 로그인 등 리소스 접근 기능은 프로젝트에 적합한 API로 개발되었습니다. 회원 ROLE은 관리자와 일반 회원으로 나뉘며 각각의 역할에 따른 권한으로 리소스 요청에 응답을 받을 수 있습니다. 비밀번호 찾기 기능은 임시 비밀번호를 발급 방식으로 개발했으며, 네이버 메일 API를 통해 가입한 이메일로 발급받게 됩니다.
 
 ### 💡 독후활동지 게시판 및 다운로드
 독후활동지 관련 정보와 함께 이미지 파일과 pdf파일을 업로드 및 수정할 수 있습니다. 업로드한 pdf파일은 미리보기와 원본 파일로 구분하여 저장되며, PDFjs라이브러리를 통해 미리보기를 지원합니다. pdf를 구입한 이후에는 다운로드가 가능하며, 모든 다운로드는 구입 여부 인증 과정을 거친 후에 진행됩니다. 독후활동지 목록을 띄우는 곳에서는 장르/연령대/정렬순서 등 여러 정렬 기준이 필요해 queryDSL을 활용하였습니다. 장르와 연령대는 데이터베이스 기반으로 동작하여 쉽게 추가 및 삭제가 가능합니다.
@@ -149,8 +150,34 @@ JWT 구현 방식은 오픈소스([https://github.com/murraco/spring-boot-jwt](h
 
 <br><br>
 
-## 업데이트 기록
-- 23.06.29 : 발송 메일 홈페이지 링크 수정 / favicon 추가
-- 23.06.28 : 배포 상황에 알맞게 수정
+## 상세 내용
+- 포트폴리오(유범석) 노션 페이지 참조 - [이동](https://bsnote.notion.site/f42284c3a0a94cbab196688b3fed24d4?pvs=4)
+
 
 <br><br>
+
+## 프로젝트 결과 소개
+<div align="center">
+ 
+### 메인 페이지
+<img width="700" src="https://github.com/BeomSeokYu/Nodeul-Project/assets/69231700/af4681f2-c0b5-4a2c-bc9d-4fc57e80fd54">
+
+### 활동지 목록
+<img width="700" src="https://github.com/BeomSeokYu/Nodeul-Project/assets/69231700/90917149-de6d-4e53-b99c-71202122282e">
+
+### 장바구니
+<img width="700" src="https://github.com/BeomSeokYu/Nodeul-Project/assets/69231700/c615455f-fdcd-484c-bfe6-29397ecea438">
+
+### 결제창
+<img width="700" src="https://github.com/BeomSeokYu/Nodeul-Project/assets/69231700/7a2140bf-d980-4b57-a24b-554bd1f03d81">
+
+### 활동지 등록 (도서 검색)
+<img width="700" src="https://github.com/BeomSeokYu/Nodeul-Project/assets/69231700/9fb73f43-6764-4815-94d6-ae81fb366d89">
+
+### 공지사항 등록
+<img width="700" src="https://github.com/BeomSeokYu/Nodeul-Project/assets/69231700/d95a40f6-d310-4b74-980a-3c70e73291c9">
+
+### 마이페이지 - 회원 정보
+<img width="700" src="https://github.com/BeomSeokYu/Nodeul-Project/assets/69231700/73e2b740-c6f0-4866-a442-827d1a5df817">
+
+</div>
