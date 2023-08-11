@@ -12,11 +12,9 @@
 - `2023-05-09` ~ `2023-06-20`
 
 #### 프로젝트 배포
-- 배포 환경
-  - Spring boot Project / MariaDB [cloudtype([https://cloudtype.io](https://cloudtype.io/))]
-  - Linux (Ubuntu 22.04.2 LTS)
-  - Managed DNS : Cloudflare
-- 북키타카 임시 홈페이지 ([https://bookitaka.store](https://bookitaka.store))
+- 배포 환경 (인프라)
+ - AWS EC2 : Linux (Ubuntu 22.04.2 LTS) / MySQL
+- 북키타카 임시 홈페이지 (https://bookitaka.store)
 
 <br><br>
 
